@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>HIRAYA</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>HIRAYA</strong> 
+						<!-- <a href="/earthquake.html" class="logo">Earthquake </a> 
+						<a href="/rainfall.html" class="logo">Rainfall</a>
+						<a href="/typhoon.html"class="logo">Typhoon</a>
+						<a href="/flood.html"class="logo">Flood</a>
+						<a href="/volcano.html"class="logo">Volcano</a> -->
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="/earthquake.html">Earthquake</a></li>
+							<li><a href="/rainfall.html">Rainfall</a></li>
+							<li><a href="/typhoon.html">Typhoon</a></li>
+							<li><a href="/flood.html">Flood</a></li>
+							<li><a href="/volcano.html">Volcano</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Rainfall</h1>
+									</header>
+
+									<hr class="major" />
+
+									<!-- Elements -->
+										<h2 id="elements"> Rainfall Reports</h2>
+													<div class="table-wrapper">
+														<div id="showData"></div>
+													</div>
+
+				<!-- Contact -->
+			
+				<!-- Footer -->
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<!-- <script src="assets/js/call_scrape_json.js"></script> -->
+			<script>
+			    $(document).ready(function () {
+			        $.getJSON("json/rain.json", function (data) {
+
+			            var arrItems = [];      // THE ARRAY TO STORE JSON ITEMS.
+			            $.each(data, function (index, value) {
+			                arrItems.push(value);       // PUSH THE VALUES INSIDE THE ARRAY.
+			            });
+
+			            // EXTRACT VALUE FOR TABLE HEADER.
+			            var col = [];
+			            for (var i = 0; i < arrItems.length; i++) {
+			                for (var key in arrItems[i]) {
+			                    if (col.indexOf(key) === -1) {
+			                        col.push(key);
+			                    }
+			                }
+			            }
+
+			            // CREATE DYNAMIC TABLE.
+			            var table = document.createElement("table");
+
+			            // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+
+			            var tr = table.insertRow(-1);                   // TABLE ROW.
+
+			            for (var i = 0; i < col.length; i++) {
+			                var th = document.createElement("th");      // TABLE HEADER.
+			                th.innerHTML = col[i];
+			                tr.appendChild(th);
+			            }
+
+			            // ADD JSON DATA TO THE TABLE AS ROWS.
+			            for (var i = 0; i < arrItems.length; i++) {
+
+			                tr = table.insertRow(-1);
+
+			                for (var j = 0; j < col.length; j++) {
+			                    var tabCell = tr.insertCell(-1);
+			                    tabCell.innerHTML = arrItems[i][col[j]];
+			                }
+			            }
+
+			            // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+			            var divContainer = document.getElementById("showData");
+			            divContainer.innerHTML = "";
+			            divContainer.appendChild(table);
+			        });
+			    });
+			</script>
+			</html>
+	</body>
+</html>
