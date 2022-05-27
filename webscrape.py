@@ -29,7 +29,7 @@ def earthquake_today():
 		# mydata['TIME OF OCCURRENCE'] = pd.to_datetime(mydata['TIME OF OCCURRENCE'])
 		# data_today = mydata.loc[mydata['DATE OF OCCURRENCE'] == pd.to_datetime('today').normalize()]
 
-	mydata.to_json('earthquake.json', orient="index")
+	mydata.to_json('json/earthquake.json', orient="index")
 		
 	# print (data_today)
 
@@ -56,7 +56,7 @@ def rainfall_today():
 		# rain_data['DATE'] = pd.to_datetime(rain_data['DATE']) #make string data to datetime format
 		# rain_data_today = rain_data.loc[rain_data['DATE'] == pd.to_datetime('today').normalize()] #find data for today's date
 		# rain_data_today = rain_data[(rain_data['DATE'] == '2022-05-03')]
-	rain_data.to_json('rain.json', orient="index")
+	rain_data.to_json('json/rain.json', orient="index")
 	# print (rain_data)
 
 
@@ -83,7 +83,7 @@ def typhoon_today():
 		# typ_data['DATE'] = pd.to_datetime(typ_data['DATE']) #make string data to datetime format
 		# typ_data_today = typ_data.loc[typ_data['DATE'] == pd.to_datetime('today').normalize()] #find data for today's date
 		# typ_data_today = typ_data[(typ_data['DATE'] == '2022-04-09')]
-	typ_data.to_json('typhoon.json', orient="index")
+	typ_data.to_json('json/typhoon.json', orient="index")
 	# print (typ_data)
 
 def flood_today():
@@ -109,7 +109,7 @@ def flood_today():
 		# fl_data['DATE'] = pd.to_datetime(fl_data['DATE']) #make string data to datetime format
 		# fl_data_today = fl_data.loc[fl_data['DATE'] == pd.to_datetime('today').normalize()] #find data for today's date
 		# fl_data_today = fl_data[(fl_data['DATE'] == '2022-04-28')]
-	fl_data.to_json('flood.json', orient="index")
+	fl_data.to_json('json/flood.json', orient="index")
 	# print (fl_data)
 
 def volcano_today(): #TAAL ONLY
@@ -139,7 +139,7 @@ def volcano_today(): #TAAL ONLY
 
 	vc_data_today.assign(
 		**vc_data_today.select_dtypes(['datetime']).astype(str).to_dict('list')
-		).to_json('volcano.json', orient="index", date_format = 'iso')
+		).to_json('json/volcano.json', orient="index", date_format = 'iso')
 	print (vc_data_today)
 
 if __name__ == '__main__':
