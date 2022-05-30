@@ -2,7 +2,7 @@ name: scraper_disaster
 
 on:
   schedule:
-    - cron: '15 4 * * *' # runs at 16:00 UTC everyday
+    - cron: '*/5 * * * *' # runs at 16:00 UTC everyday
 
 jobs:
   build:
