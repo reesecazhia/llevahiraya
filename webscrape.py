@@ -149,6 +149,6 @@ if __name__ == '__main__':
 		typhoon_today ()
 		flood_today()
 		volcano_today()
-		# time_wait = 60
-		# time.sleep(time_wait* 60)
+		time_wait = 60
+		time.sleep(time_wait* 30)
 
