@@ -147,6 +147,16 @@ def volcano_today(): #TAAL ONLY
 	return
 	print (vc_data_today)
 
+<<<<<<< HEAD
+=======
+
+earthquake_today()
+rainfall_today()
+typhoon_today ()
+flood_today()
+volcano_today()
+		
+>>>>>>> a384854a3bd2fb700ae19c6c0239ec7584faee81
 
 earthquake_today()
 rainfall_today()
