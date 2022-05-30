@@ -30,6 +30,7 @@ def earthquake_today():
 		# data_today = mydata.loc[mydata['DATE OF OCCURRENCE'] == pd.to_datetime('today').normalize()]
 
 	mydata.to_json('json/earthquake.json', orient="index")
+	return
 		
 	# print (data_today)
 
@@ -57,6 +58,7 @@ def rainfall_today():
 		# rain_data_today = rain_data.loc[rain_data['DATE'] == pd.to_datetime('today').normalize()] #find data for today's date
 		# rain_data_today = rain_data[(rain_data['DATE'] == '2022-05-03')]
 	rain_data.to_json('json/rain.json', orient="index")
+	return
 	# print (rain_data)
 
 
@@ -84,6 +86,7 @@ def typhoon_today():
 		# typ_data_today = typ_data.loc[typ_data['DATE'] == pd.to_datetime('today').normalize()] #find data for today's date
 		# typ_data_today = typ_data[(typ_data['DATE'] == '2022-04-09')]
 	typ_data.to_json('json/typhoon.json', orient="index")
+	return
 	# print (typ_data)
 
 def flood_today():
@@ -110,6 +113,7 @@ def flood_today():
 		# fl_data_today = fl_data.loc[fl_data['DATE'] == pd.to_datetime('today').normalize()] #find data for today's date
 		# fl_data_today = fl_data[(fl_data['DATE'] == '2022-04-28')]
 	fl_data.to_json('json/flood.json', orient="index")
+	return
 	# print (fl_data)
 
 def volcano_today(): #TAAL ONLY
@@ -140,15 +144,14 @@ def volcano_today(): #TAAL ONLY
 	vc_data_today.assign(
 		**vc_data_today.select_dtypes(['datetime']).astype(str).to_dict('list')
 		).to_json('json/volcano.json', orient="index", date_format = 'iso')
+	return
 	print (vc_data_today)
 
-if __name__ == '__main__':
-	while True:
-		earthquake_today()
-		rainfall_today()
-		typhoon_today ()
-		flood_today()
-		volcano_today()
-		# time_wait = 60
-		# time.sleep(time_wait* 60)
 
+earthquake_today()
+rainfall_today()
+typhoon_today ()
+flood_today()
+volcano_today()
+
+		
