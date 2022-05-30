@@ -737,8 +737,8 @@ banner
   font-size: 54px;
   text-transform: uppercase;
   font-weight: 800;
-  color: #120056;
-  text-shadow: 2px 2px 0px #FFF;
+  color: #FFF;
+  text-shadow: 2px 2px 0px #000;
   letter-spacing: 1px;
 }
 

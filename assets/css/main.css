@@ -2193,12 +2193,13 @@ input, select, textarea {
 		}
 
 			.image.fit img {
-				width: 100%;
+				width: 75%;
 			}
 
 		.image.main {
 			display: block;
-			margin: 2.5em 0;
+			position: center;
+			margin: 0 0 2.5em 0;
 			width: 100%;
 		}
 
