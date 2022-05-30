@@ -142,13 +142,11 @@ def volcano_today(): #TAAL ONLY
 		).to_json('json/volcano.json', orient="index", date_format = 'iso')
 	print (vc_data_today)
 
-if __name__ == '__main__':
-	while True:
-		earthquake_today()
-		rainfall_today()
-		typhoon_today ()
-		flood_today()
-		volcano_today()
-		time_wait = 60
-		time.sleep(time_wait* 30)
+
+earthquake_today()
+rainfall_today()
+typhoon_today ()
+flood_today()
+volcano_today()
+		
 
