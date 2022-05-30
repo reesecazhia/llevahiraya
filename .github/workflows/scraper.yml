@@ -1,9 +1,8 @@
 name: scraper_disaster
 
-on:
-  repository_dispatch:
-  workflow_dispatch:
-
+on: 
+  schedule:
+    - cron: '*/10 * * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
