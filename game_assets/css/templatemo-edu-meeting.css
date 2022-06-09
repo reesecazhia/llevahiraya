@@ -727,7 +727,7 @@ banner
   text-transform: uppercase;
   /*text-align: center;*/
   font-weight: 600;
-  color: #120056;
+  color: #FFF;
   letter-spacing: 1px;
 }
 
@@ -737,7 +737,7 @@ banner
   font-size: 54px;
   text-transform: uppercase;
   font-weight: 800;
-  color: #F89469;
+  color: #FFFF;
   text-shadow: 2px 2px 0px #000;
   letter-spacing: 1px;
 }
@@ -751,7 +751,7 @@ banner
 .main-banner .caption p {
   color: #fff;
   font-size: 28px;
-  color: #F89469;
+  color: #FFF;
   text-shadow: 2px 2px 0px #000;
   font-style: italic;
 }
