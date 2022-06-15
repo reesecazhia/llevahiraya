@@ -366,6 +366,26 @@ input, select, textarea {
 
 		.row > .col-4 {
 			width: 33.33333%;
+		/*-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			margin-left: 0;
+			-moz-align-items: center;
+			-webkit-align-items: center;
+			-ms-align-items: center;
+			align-items: center;
+		-moz-justify-content: center;
+		-webkit-justify-content: center;
+		-ms-justify-content: center;
+		justify-content: center;
+		box-shadow: none;
+		left: 0;
+		padding: 3em 2em;
+		position: fixed;
+		top: 0;
+		z-index: 10002;*/
+
 		}
 
 		.row > .off-4 {
@@ -481,6 +501,16 @@ input, select, textarea {
 
 			.row.gtr-50.gtr-uniform {
 				margin-top: -1em;
+
+			-moz-align-items: center;
+			-webkit-align-items: center;
+			-ms-align-items: center;
+			align-items: center;
+		-moz-justify-content: center;
+		-webkit-justify-content: center;
+		-ms-justify-content: center;
+		justify-content: center;
+		
 			}
 
 				.row.gtr-50.gtr-uniform > * {
@@ -2093,6 +2123,15 @@ input, select, textarea {
 			border: 0;
 			border-radius: 0;
 			padding: 0;
+		}
+	#break {
+			border: 0;
+			border-radius: 0;
+			padding: 0;
+			-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
 		}
 
 /* Icon */
